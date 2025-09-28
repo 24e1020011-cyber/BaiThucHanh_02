@@ -1,3 +1,11 @@
+/* Container chung cho toàn bộ nội dung */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -5,31 +13,32 @@ body {
     color: #333;
 }
 
+/* HEADER */
 .header-bg {
     background: url('../images/head-background.jpg') no-repeat center center;
     background-size: cover;
-    position: relative;
-    height: 370px;
+    min-height: 600px;
+    display: flex;
+    align-items: flex-start;
 }
 
 .header-content {
-    position: relative;
     width: 100%;
-    height: 100%;
+    padding-top: 20px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    position: absolute;
-    top: 20px;
-    left: 40px;
-    width: 120px;
+    width: 200px;
 }
 
 .hotline {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    background: #6bbf2a;
+    background: #49A333;
     color: #fff;
     padding: 12px 30px;
     border-radius: 8px;
@@ -38,53 +47,67 @@ body {
 }
 
 .register-box {
-    position: absolute;
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #6bbf2a;
+    margin-top: 40px;
+    background: #678B37; 
     color: #fff;
-    padding: 30px 30px 20px 30px;
+    padding: 25px;
     border-radius: 8px;
-    width: 320px;
+    max-width: 250px;     /* giảm chiều rộng box */
+    width: 100%;
     box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     text-align: center;
+    border: 4px solid #C5D301;
+
+    /* bám lề trái, thẳng hàng với container */
+    margin-left: 0;
 }
+
 
 .register-box h2 {
     margin: 0 0 10px 0;
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 50;
+    text-align: center;
 }
 
 .register-box p {
     font-size: 14px;
     margin-bottom: 18px;
+    font-style: italic;
+    text-align: center;
 }
 
-.register-box input, .register-box button {
+.register-box input, 
+.register-box button {
     width: 90%;
     margin: 7px 0;
     padding: 10px;
-    border: none;
     border-radius: 4px;
+    font-size: 14px;
 }
 
 .register-box input {
-    background: #fff;
-    color: #333;
+    background: transparent;
+    color: #fff;
 }
 
+.register-box input::placeholder {
+    color: #f1f1f1;
+}
+
+/* Nút đăng ký màu vàng */
 .register-box button {
-    background: #333;
-    color: #fff;
+    background: #d5e63c; 
+    color: #333;
     font-weight: bold;
     cursor: pointer;
+    border: none;
+    text-transform: uppercase;
 }
 
-.main-content {
-    max-width: 1100px;
-    margin: 0 auto;
+
+/* MAIN */
+.main {
     padding: 30px 0;
 }
 
@@ -94,42 +117,88 @@ body {
     margin-bottom: 30px;
     background: #fff;
     padding: 20px 0;
+    gap: 20px;
 }
 
 .section-img img {
-    width: 320px;
-    height: 180px;
+    width: 400px;
+    height: 280px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     object-fit: cover;
     background: #fff;
+    border: 3px dashed #49A333;  /* viền nét đứt màu xanh */
 }
 
 .section.green-bg {
-    background: #a7d97c;
-    padding: 20px;
-    border-radius: 0;
+    background: #81af53;            
+    width: 100vw;                       
+    margin-left: calc(-50vw + 50%);                  
     margin-bottom: 0;
+    border-radius: 0;                   
+}
+
+.section.green-bg .container {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* text bên trái */
+.section.green-bg .section-text {
+    flex: 1;
+}
+
+/* ảnh bên phải */
+.section.green-bg .section-img {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .section.green-bg .section-text h3 {
+    text-align: left;               /* chữ căn trái */
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: bold;
     color: #fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 8px;
 }
 
 .section.green-bg .section-text p {
     color: #fff;
+    text-align: justify;
 }
 
+.section.green-bg .section-text h3,
+.section.green-bg .section-text p {
+    color: #fff;
+}
+
+.section-text h3 {
+    text-align: center;   /* căn giữa tiêu đề */
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #678B37;
+    font-size: 15px;      /* giảm size chữ tiêu đề */
+}
+
+.section-text p {
+    text-align: justify;  /* căn đều 2 bên cho đoạn văn */
+}
+/* FOOTER */
 .footer-form {
-    background: #f3e97c;
+    background: #dce085;
     padding: 30px 0;
-    text-align: center;
     border-top: 4px solid #fff;
+    text-align: center;
+    margin-top: 0;
 }
 
 .footer-form h3 {
-    color: #6bbf2a;
+    color: #2A6E01;
     margin-bottom: 18px;
     font-size: 18px;
     font-weight: bold;
@@ -155,9 +224,14 @@ body {
 }
 
 .footer-form button {
-    background: #6bbf2a;
+    background: #2A6E01;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
     width: 160px;
+}
+
+.section.green-bg p:last-child,
+.section.green-bg h3:last-child {
+    margin-bottom: 0;
 }
